@@ -1,0 +1,24 @@
+{% include "component/head.njk" %}
+{% include "component/header.njk" %}
+
+<div class="mxw">
+
+	{% block content -%}
+
+		<main id="main">
+
+			<!-- <i>page.njk</i> -->
+
+			<h1>{{ title }}</h1>
+
+			{% if description %}<p>{{ description }}</p>{% endif %}
+
+			{{ content | safe }}
+
+		</main>
+
+	{%- endblock %}
+
+</div>
+
+{% include "component/footer.njk" %}

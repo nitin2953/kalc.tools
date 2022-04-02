@@ -1,0 +1,52 @@
+---
+title: Ratio Calculator
+---
+
+<div class="calc-wrapper">
+	<form id="calc-form" class="calc-form">
+		<button type="button" id="swap-ab" class="swap">⟵ ⟶</button>
+		<button type="button" id="swap-ac" class="swap">⟵ ⟶</button>
+
+		<label for="a" class="ltr">a<input id="a" type="number" min=".01" step=".01" placeholder="16" required autofocus /></label>
+		<label for="b" class="ltr">b<input id="b" type="number" min=".01" step=".01" placeholder="9" required /></label>
+
+		<label for="c" class="ltr">c<input id="c" type="number" min=".01" step=".01" placeholder="1920" required enterkeyhint="done" /></label>
+		<label for="x" class="ltr result">x<input id="x" type="number" placeholder="1080" readonly /></label>
+
+		<button type="button" id="copy-result">Copy ↑</button>
+		<input type="reset" value="Clear" />
+		<input type="submit" value="Calculate Ratio" class="sr-only" tabindex="-1">
+	</form>
+
+	<div id="calc-equation" class="calc-equation">
+		<span class="dull">(</span>
+		<span id="b-eq">b</span>
+		<span class="dull">÷</span>
+		<span id="a-eq">a</span>
+		<span class="dull">)</span>
+		<span class="dull">×</span>
+		<span id="c-eq">c</span>
+		<span class="dull">=</span>
+		<span id="x-eq">x</span>
+	</div>
+</div>
+
+<style>
+
+	{% include "i-css/calc.css" %}
+
+	#calc-form > label:nth-of-type(odd):after {
+		content: ":";
+		right: clamp(-15px, (100vw - 401px) * -9999, -12.5px);
+	}
+
+	#calc-form > input[type="reset"] {
+		grid-row-start: 3;
+	}
+
+</style>
+
+
+<script>
+	{% include "i-js/calculators/math/ratio-calculator.js" %}
+</script>

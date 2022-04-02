@@ -1,0 +1,16 @@
+// Fonts
+
+// $devanagari: "Kohinoor Devanagari", "Noto Sans Devanagari", "Mangal";
+$apple: "-apple-system", "BlinkMacSystemFont";
+$android: "Google Sans Text", "Google Sans", "Rubik", "Noto Sans", "Roboto";
+$windows: "Segoe UI Variable Display", "Segoe UI";
+$linux: "Open Sans", "Oxygen", "Cantarell", "Fira Sans", "Ubuntu";
+
+$mono: "JetBrains Mono", "SF Mono", "SFMono-Regular", "Cascadia Code", "Courier New", "Fira Code", ui-monospace, monospace;
+
+$fallback: "Arial", sans-serif;
+$emoji: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+
+$body-font: $apple, $android, $windows, $linux, $fallback, $emoji;
+$mono-font: $mono, $emoji;

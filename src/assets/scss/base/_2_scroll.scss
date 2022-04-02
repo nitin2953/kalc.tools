@@ -1,0 +1,50 @@
+* {
+	scroll-behavior: smooth;
+	scrollbar-width: thin;
+	scrollbar-color: #ccc #fafafa;
+	-webkit-overflow-scrolling: touch; /* Only iOS Safari */
+	overflow-anchor: auto;
+}
+
+html:not(:focus-within) {
+	scroll-behavior: auto;
+}
+
+::-webkit-scrollbar {
+	width: 11px;
+	height: 11px;
+	/* outline: .1px solid #ccc; */
+	/* display: none; */
+
+	&-track { background: #fafafa }
+	&-track:vertical { border-left: .1px solid #ccc }
+	&-track:horizontal { border-top: .1px solid #ccc }
+
+	&-thumb {
+		background-color: #ccc;
+		min-height: 70px;
+		min-width: 70px;
+
+		&:hover { background-color: #bbb }
+
+		&:active { background-color: #aaa }
+	}
+}
+
+// ::-webkit-scrollbar-track:vertical {
+// 	border-left: .1px solid #ccc;
+// }
+
+:target {
+	scroll-margin-top: 100px;
+}
+
+// @media (max-height: 200px) {
+// 	:target {
+// 		scroll-margin-top: 35px;
+// 	}
+
+// 	html {
+// 		scroll-padding-top: 65px; /* On focusing input fields */
+// 	}
+// }

@@ -1,0 +1,24 @@
+$min-width-700: "min-width: 701px"; // @700(desk)
+$max-width-700: "max-width: 700px"; // @700(mob)
+
+@function M700($device) {
+	@if ($device == "desk") {
+		@return $min-width-700;
+	}
+	@else if ($device == "mob") {
+		@return $max-width-700;
+	}
+}
+
+
+$min-width-400: "min-width: 401px"; // @400(desk)
+$max-width-400: "max-width: 400px"; // @400(mob)
+
+@function M400($device) {
+	@if ($device == "desk") {
+		@return $min-width-400;
+	}
+	@else if ($device == "mob") {
+		@return $max-width-400;
+	}
+}

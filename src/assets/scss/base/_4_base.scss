@@ -1,0 +1,100 @@
+:root {
+	--bgcolor-primary: #0050ff;
+	--bgcolor-secondary: hsl(221, 100%, 72%);
+	--bgcolor-tertiary: hsl(222, 100%, 93%);
+}
+
+html {
+	min-width: 320px;
+	background-color: #fff;
+}
+
+html, body {
+	overflow-x: hidden;
+	overflow-x: clip;
+}
+
+a, button { touch-action: manipulation }
+
+// a:not(main :is(p, ul, ol) a) | main :is(p, ul, ol) a
+a:not(main a) {
+	display: block;
+	color: currentColor;
+	text-decoration: none;
+}
+main a {
+	color: var(--bgcolor-primary);
+	// text-decoration: none;
+	text-underline-offset: 3px;
+
+	@media (max-resolution: 1dppx) {
+		text-underline-offset: 3.5px;
+	}
+
+	// Test on REDMI 5
+	// @media (min-resolution: 2dppx) {
+	// 	text-underline-offset: 3px;
+	// }
+
+	&:focus-visible {
+		text-decoration: none;
+	}
+}
+
+img, picture /*, video, canvas, svg */ {
+	display: block;
+	max-width: 100%;
+	border-radius: 4px;
+}
+
+/* Other Elements START */
+
+table {
+	--border-color: #ccc;
+	border-collapse: collapse;
+	outline: 2px solid var(--border-color); // box-shadow: 0 0 0 2px var(--border-color);
+	/* border-radius: 3px; */
+	display: block;
+	width: 100%;
+	max-width: max-content;
+	overflow: auto;
+
+	& tr:nth-child(even) {
+		background-color: #fafafa;
+	}
+
+	& td {
+		outline: 1px solid var(--border-color); // box-shadow: 0 0 0 1px var(--border-color);
+		padding: 4px 7px;
+	}
+
+	& a {
+		text-decoration: none;
+	}
+}
+
+/* Other Elements END */
+
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
+
+.placeholder {
+	visibility: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: light;
+		filter: invert(.9);
+	}
+}

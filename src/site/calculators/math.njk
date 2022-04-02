@@ -1,0 +1,14 @@
+---
+title: Math Calculators
+---
+
+<table>
+	<tbody>
+		{%- for calc in collections.math_calculators -%}
+			<tr>
+				<td>{{ calc.data.title }}</td>
+				<td>⇒ <a href="{{ calc.url | url }}">{{ calc.url }}</a></td>
+			</tr>
+		{% endfor -%}
+	</tbody>
+</table>

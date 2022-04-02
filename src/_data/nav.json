@@ -1,0 +1,31 @@
+{
+	"header": [
+		{
+			"title": "Calculators",
+			"url": "/calculators/"
+		},
+		{
+			"title": "Blog",
+			"url": "/blog/"
+		}
+	],
+
+	"footer": [
+		{
+			"title": "About",
+			"url": "/about/"
+		},
+		{
+			"title": "Contact",
+			"url": "/contact/"
+		},
+		{
+			"title": "Legal",
+			"url": "/legal/"
+		},
+		{
+			"title": "Sitemap",
+			"url": "/sitemap.xml"
+		}
+	]
+}

@@ -1,0 +1,17 @@
+---
+title: Calculators
+meta_description: Calculators for math, physics, electricity, etc.
+
+tags: root_page
+---
+
+<table>
+	<tbody>
+		{%- for calc in collections.calculators_subject -%}
+			<tr>
+				<td>{{ calc.data.title }}</td>
+				<td>⇒ <a href="{{ calc.url | url }}">{{ calc.url }}</a></td>
+			</tr>
+		{% endfor -%}
+	</tbody>
+</table>

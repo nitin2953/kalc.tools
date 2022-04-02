@@ -1,0 +1,21 @@
+{% extends "page.njk" %}
+
+{% block content -%}
+
+	<main>
+
+		<article id="main">
+
+			<!-- <i>USING post.njk</i> -->
+
+			<h1>{{ title }}</h1>
+
+			{% if description %}<p>{{ description }}</p>{% endif %}
+
+			{{ content | safe }}
+
+		</article>
+
+	</main>
+
+{%- endblock %}

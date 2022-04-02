@@ -1,0 +1,29 @@
+{
+	"title": "Kalc Tools",
+	"url": "https://kalc.tools",
+	"description": "Online Calculators, Converters & Tools packed in a beautiful and easy to use website",
+	"separator": " • ",
+
+	"email": "contact@kalc.tools",
+	"contact_email": "contact_us@kalc.tools",
+
+	"assets": {
+		"fonts": "/assets/fonts/",
+		"images": "/assets/images/",
+		"css": "/assets/css/main.css",
+		"js":	"/assets/js/main.js"
+	},
+
+	"pages": {
+		"calculators":  { "title": "Calculators",  "url": "/calculators/" },
+		"converters":   { "title": "Converters",   "url": "/converters/"  },
+		"tools":        { "title": "Tools",        "url": "/tools/"       },
+		"resources":    { "title": "Resources",    "url": "/resources/"   },
+		"blog":         { "title": "Blog",         "url": "/blog/"        },
+
+		"about":        { "title": "About",        "url": "/about/"       },
+		"contact":      { "title": "Contact",      "url": "/contact/"     },
+		"legal":        { "title": "Legal",        "url": "/legal/"       },
+		"sitemap":      { "title": "Sitemap",      "url": "/sitemap.xml"  }
+	}
+}

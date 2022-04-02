@@ -1,0 +1,21 @@
+<!--|| श्री ||-->
+<!doctype html>
+<html lang="en-IN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>{{- site.title if page.url === '/' else title + site.separator + site.title -}}</title>
+	{%- if description or meta_description %}
+	<meta name="description" content="{{- description | safe if description else meta_description | safe -}}" />
+	{% endif %}
+
+	<meta name="theme-color" content="#0050ff" />
+	<meta name="color-scheme" content="light dark">
+
+	<link rel="preload" as="font" href="/assets/fonts/inter.var.woff2" type="font/woff2" crossorigin />
+
+	<link rel="stylesheet" href="{{ site.assets.css | url }}" />
+	<script defer src="{{ site.assets.js | url }}"></script>
+</head>
+<body>

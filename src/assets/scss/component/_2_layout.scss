@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+#main {
+	--gap: clamp(14px, 4%, 40px); // give info of calculator slighly more padding
+	$min: #{"100% - var(--gap) * 2"};
+	$max: 900px;
+	$width: min( $min , $max );
+
+	display: grid;
+	grid-template-columns: var(--gap) $width var(--gap);
+	/* grid-template-columns: 1fr $width 1fr; */
+	justify-content: center;
+	padding: 70px 0 80px;
+
+	@at-root :where(#{&} > *) { grid-column: 2 }
+	@media (M400(mob)) { & > .full-bleed { grid-column: 1 / -1 } }
+
+	// & > :nth-child(2) ~ *:not(p) { margin-top: calc(1em + .6rem) }
+	& > :nth-child(2) ~ * { margin-top: calc(1em + .6rem) }
+
+	// @at-root article#{&} p { margin-top: .8em }
+	// @at-root main#{&} p { margin-top: .4em }
+
+	// @at-root article#{&} { --gap: clamp(20px, 6%, 40px); }
+	// @at-root article#{&} { --gap: clamp(18px, 5%, 40px); }
+	@at-root article#{&} { --gap: clamp(16px, 5%, 40px); }
+}

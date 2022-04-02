@@ -1,0 +1,73 @@
+---
+title: Percentage Calculator
+---
+
+<div class="calc-wrapper">
+	<form id="calc-form-1" class="calc-form">
+		{# <button type="button" id="swap-ab" class="swap">⟵ ⟶</button> #}
+
+		<label for="a" class="rtl"><input id="a" type="number" min=".01" step=".01" placeholder="20" required autofocus />%</label>
+		<label for="b" class="ltr">of<input id="b" type="number" min=".01" step=".01" placeholder="200" required /></label>
+		<!-- <label class="placeholder" aria-hidden="true"></label> --><!-- taking space in desktop -->
+		<label for="x" class="ltr result">=<input id="x" type="number" placeholder="40" readonly /></label>
+
+		<button type="button" id="copy-result">Copy ↑</button>
+		<input type="reset" value="Clear" />
+		<input type="submit" value="Simplify Ratio" class="sr-only" tabindex="-1">
+	</form>
+
+	<div id="calc-equation-1" class="calc-equation">
+		<span class="frac">
+			<span>
+				<span id="a-eq">20</span>
+				<span class="dull">×</span>
+				<span id="b-eq">200</span>
+			</span>
+			<span class="sr-only">/</span>
+			<span>100</span>
+		</span>
+		<span class="dull">=</span>
+		<span id="x-eq">40</span>
+	</div>
+</div>
+
+<style>
+
+	{% include "i-css/calc.css" %}
+
+	#calc-form-1 {
+		grid-template-columns: repeat(3, minmax(100px, 140px));
+	}
+
+	#calc-form-1 > input[type=reset] {
+		grid-row-start: 2;
+	}
+
+	@media (max-width: 451px) {
+		#calc-form-1 {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		#calc-form-1 > input[type=reset] {
+			grid-row-start: 3;
+		}
+		#calc-form-1 > label[for="x"] {
+			grid-column-end: -1;
+		}
+	}
+
+</style>
+
+
+<script>
+	{% include "i-js/calculators/math/percentage.js" %}
+</script>
+
+
+{#
+{% set js %}
+{% include "i-js/calculators/math/percentage.js" %}
+{% endset %}
+
+<script>
+	{{- js | safe -}}
+</script> #}

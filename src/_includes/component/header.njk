@@ -1,0 +1,15 @@
+<input type="checkbox" id="mob-menu" autocomplete="off" hidden />
+<header id="site-header">
+	<nav class="mxw">
+		<a href="/" {% if page.url == "/" %} aria-current="page" {% endif %} id="logo" title="{{ site.title }} Home">
+			<img decoding="sync" loading="eager" src="{{- site.assets.images | url -}} logo.svg" width="108" height="40" alt="{{ site.title }} Logo" />
+		</a>
+		<button>Open menu</button>
+		<label for="mob-menu" aria-hidden="true"></label>
+		<div>
+			{%- for item in nav.header %}
+			<a href="{{ item.url | url }}" {%- if item.url === page.url %} aria-current="page" {%- endif -%} >{{ item.title }}</a>
+			{%- endfor %}
+		</div>
+	</nav>
+</header>

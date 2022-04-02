@@ -1,0 +1,14 @@
+---
+title: Legal Information
+eleventyComputed:
+  meta_description: "Legal Information about tools & services {{ site.title | safe }} provides."
+
+tags: root_page
+XeleventyExcludeFromCollections: legal
+---
+
+{%- for page in collections.legal -%}
+	<h2>{{ page.data.title }}</h2>
+	<p>{{ page.data.meta_description }}</p>
+	<a class="btn-primary" href="{{ page.url | url }}">Read {{ page.data.title }}</a>
+{% endfor -%}

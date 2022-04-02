@@ -1,0 +1,50 @@
+---
+title: Ratio Simplifier
+---
+
+<div class="calc-wrapper">
+	<form id="calc-form" class="calc-form">
+		<button type="button" id="swap-ab" class="swap">⟵ ⟶</button>
+		<button type="button" class="placeholder swap" aria-hidden="true"></button>
+
+		<label for="a" class="ltr">a<input id="a" type="number" min=".01" step=".01" placeholder="1920" required autofocus /></label>
+		<label for="b" class="ltr">b<input id="b" type="number" min=".01" step=".01" placeholder="1080" required /></label>
+
+		<label for="x" class="ltr result">x<input id="x" type="number"  placeholder="16" readonly  /></label>
+		<label for="y" class="ltr result">y<input id="y" type="number" placeholder="9" readonly /></label>
+
+		<button type="button" id="copy-result">Copy ↑</button>
+		<input type="reset" value="Clear" />
+		<input type="submit" value="Simplify Ratio" class="sr-only" tabindex="-1">
+	</form>
+
+	<div id="calc-equation" class="calc-equation">
+		<span class="frac"><span id="a-eq">a</span><span class="sr-only">/</span><span class="gcf-eq">GCF</span></span>
+		<span class="dull">:</span>
+		<span class="frac"><span id="b-eq">b</span><span class="sr-only">/</span><span class="gcf-eq">GCF</span></span>
+		<span class="dull">=</span>
+		<span id="x-eq">x</span>
+		<span class="dull">:</span>
+		<span id="y-eq">y</span>
+	</div>
+</div>
+
+<style>
+
+	{% include "i-css/calc.css" %}
+
+	#calc-form > label:nth-of-type(odd):after {
+		content: ":";
+		right: clamp(-15px, (100vw - 401px) * -9999, -12.5px);
+	}
+
+	#calc-form > input[type="reset"] {
+		grid-row-start: 3;
+	}
+
+</style>
+
+
+<script>
+	{% include "i-js/calculators/math/ratio-simplifier.js" %}
+</script>

@@ -1,0 +1,22 @@
+---
+eleventyComputed:
+  title: "{{ site.title }}"
+  meta_description: "{{ site.description | safe }}"
+
+permalink: /
+---
+
+<table>
+	<tbody>
+
+		{% for page in collections.root_page -%}
+
+			<tr>
+				<td>{{ page.data.title }}</td>
+				<td>⇒ <a href="{{ page.url | url }}">{{ page.url }}</a></td>
+			</tr>
+
+		{% endfor %}
+
+	</tbody>
+</table>

@@ -1,0 +1,12 @@
+	<footer id="site-footer">
+		<div class="mxw">
+			<strong>© {{ site.title }}</strong>
+			<nav>
+				{%- for item in nav.footer %}
+				<a href="{{ item.url | url }}" {%- if item.url === page.url %} aria-current="page" {%- endif -%} >{{ item.title }}</a>
+				{%- endfor %}
+			</nav>
+		</div>
+	</footer>
+</body>
+</html>

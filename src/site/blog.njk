@@ -1,0 +1,13 @@
+---
+title: Blog
+meta_description: Posts about me and my learnings
+
+tags: root_page
+XeleventyExcludeFromCollections: blog
+---
+
+{%- for page in collections.blog -%}
+	<h2>{{ page.data.title }}</h2>
+	<p>{{ page.data.meta_description }}</p>
+	<a class="btn-primary" href="{{ page.url | url }}">Read →</a>
+{% endfor -%}
