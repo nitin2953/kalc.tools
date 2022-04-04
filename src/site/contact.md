@@ -1,6 +1,6 @@
 ---
 title: Contact Us
-meta_description: Contact us for any questions, suggestions or bug reports.
+seoDesc: Contact us for any questions, suggestions or bug reports.
 
 tags: root_page
 ---

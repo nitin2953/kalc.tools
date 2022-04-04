@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy
 eleventyComputed:
-  meta_description: "{{ site.title | safe }} is committed to protecting your privacy. This Privacy Policy describes how we collect, use and share information about you when you use our website."
+  seoDesc: "{{ site.title | safe }} is committed to protecting your privacy. This Privacy Policy describes how we collect, use and share information about you when you use our website."
 ---
 
 **Updated on: 4 March, 2022**

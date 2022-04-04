@@ -1,6 +1,6 @@
 ---
 title: Disclaimer
-meta_description: Disclaimer about our site & results presented by our calculators, convertors and tools
+seoDesc: Disclaimer about our site & results presented by our calculators, convertors and tools
 ---
 
 **Updated on: 4 March, 2022**

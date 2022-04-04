@@ -1,6 +1,6 @@
 ---
 title: What are Bookmarklets ? How to create & use them ?
-meta_description: Bookmarklets are browser bookmarks that execute JavaScript code instead of navigating to a new page.
+seoDesc: Bookmarklets are browser bookmarks that execute JavaScript code instead of navigating to a new page.
 ---
 
 <dfn>Bookmarklets</dfn> are browser bookmarks that execute JavaScript code instead of navigating to a new page. They are also known as "applets", "favlets", and "javascript bookmarklets". They often used to add additional functionality to browsers.

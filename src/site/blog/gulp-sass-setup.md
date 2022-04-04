@@ -1,6 +1,6 @@
 ---
 title: How to setup Gulp and SCSS
-meta_description: Setup Gulp 4 and SCSS for auto complition
+seoDesc: Setup Gulp 4 and SCSS for auto complition
 ---
 
 # What is Gulp and SCSS?

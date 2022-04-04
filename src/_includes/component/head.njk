@@ -1,3 +1,6 @@
+{% if seoTitle %}{% set seoTitle %}{{ seoTitle + site.separator }}{% endset %}{% endif %}
+{% if title %}{% set title %}{{ title + site.separator }}{% endset %}{% endif %}
+
 <!--|| श्री ||-->
 <!doctype html>
 <html lang="en-IN">
@@ -5,9 +8,12 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<title>{{- site.title if page.url === '/' else title + site.separator + site.title -}}</title>
-	{%- if description or meta_description %}
-	<meta name="description" content="{{- description | safe if description else meta_description | safe -}}" />
+	{% if seoTitle or title -%}
+	<title>{{ site.title if page.url === '/' else seoTitle or title | safe }}</title>
+	{%- endif %}
+
+	{%- if seoDesc or desc %}
+	<meta name="description" content="{{- seoDesc or desc -}}" />
 	{% endif %}
 
 	<meta name="theme-color" content="#0050ff" />

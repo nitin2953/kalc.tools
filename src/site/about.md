@@ -1,7 +1,7 @@
 ---
 title: About Us
 eleventyComputed:
-  meta_description: "All about {{ site.title | safe }} from why & how it's started and how it is going."
+  seoDesc: "All about {{ site.title | safe }} from why & how it's started and how it is going."
 
 tags: root_page
 ---
