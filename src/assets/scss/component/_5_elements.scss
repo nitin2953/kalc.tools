@@ -22,6 +22,46 @@ a.btn-primary {
 }
 
 
+/* Details Summary */
+
+details {
+	background-color: #fafafa;
+	padding: 10px 20px 15px;
+
+	& > summary {
+		background-color: #f7f7f7;
+		border-radius: 5px;
+		padding: 6px 14px 5px;
+		margin: -10px -20px -15px;
+		border-bottom: 2px solid #eee;
+		font-weight: 600;
+		color: #333;
+		cursor: pointer;
+		touch-action: manipulation;
+
+		&::marker { content: none }
+
+		&::before {
+			content: "▶";
+			display: inline-block;
+			font-size: 80%;
+			vertical-align: 1px;
+			margin-right: 10px;
+			transition: transform 0.2s;
+		}
+	}
+
+	&[open] > summary {
+		margin-bottom: 15px;
+		border-radius: 5px 5px 0 0;
+
+		&::before {
+			transform: rotate(90deg);
+		}
+	}
+}
+
+
 /* CODE */
 
 mark, code, pre, details { border-radius: .4em }
@@ -40,6 +80,8 @@ pre {
 	display: flex; // enabling right padding
 	tab-size: 3;
 	margin: 1em 0;
+
+	details > &:only-of-type { margin-bottom: 5px; }
 
 	& > code {
 		padding: 0.9em 1.1em;
