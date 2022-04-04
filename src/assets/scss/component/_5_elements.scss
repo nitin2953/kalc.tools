@@ -10,7 +10,7 @@
 	margin-top: 1em !important;
 	transition: background-color .1s linear, color .1s linear;
 
-	&:is(:hover, :focus-visible, :active) {
+	&:is(:hover, :focus-visible) {
 		background-color: #fff;
 		color: var(--bgcolor-primary);
 	}
@@ -22,48 +22,59 @@ a.btn-primary {
 }
 
 
-/* MISC */
+/* CODE */
 
-mark, code {	border-radius: 4px }
+mark, code, pre, details { border-radius: .4em }
 
-mark { background-color: #fffa36 } // #fff900
-
-pre, code {
-	background-color: #eee;
-	// font-weight: 400;
-}
-
-pre {
-	tab-size: 3;
-	padding: 1em;
-	border-radius: .4em;
-	overflow-x: auto;
-	scrollbar-width: none;
-
-	&::-webkit-scrollbar {
-		height: 15px;
-
-		&-track {
-			border: none !important;
-			background-color: transparent;
-		}
-
-		&-thumb {
-			border: 4px solid transparent;
-			background-clip: content-box;
-			border-radius: 10px;
-		}
-	}
-}
+code, pre { background-color: #eee; }
 
 code {
-	font-style: normal; // for <dfn>
-	// font-weight: normal; // forl <strong>
-	// font-size: clamp(17px, calc(1.03rem + .17vw), 18px);
+	font-style: normal;
 	font-size: clamp(16px, calc(.97rem + .17vw), 17px);
+	padding: 0 .2em;
 }
 
-code:not(pre > code) {
-	padding: 0 .2em;
-	// overflow-wrap: break-word;
+
+pre {
+	// position: relative;
+	display: flex; // enabling right padding
+	tab-size: 3;
+	margin: 1em 0;
+
+	& > code {
+		padding: 0.9em 1.1em;
+		overflow-x: auto;
+		scrollbar-width: thin;
+
+		// &:has( + button) { padding-right: calc(40px + .8em); }
+
+		&::-webkit-scrollbar {
+			width: 15px;
+			height: 15px;
+
+			&-track {
+				border: none !important;
+				background-color: transparent;
+			}
+
+			&-thumb {
+				border: 4px solid transparent;
+				background-clip: content-box;
+				border-radius: 10px;
+			}
+		}
+	}
+
+	// & > button {
+	// 	position: absolute;
+	// 	right: 0;
+	// 	width: 35px;
+	// 	height: 35px;
+	// 	margin: 5px;
+	// }
 }
+
+
+/* MISC */
+
+mark { background-color: #fffa36 } // #fff900

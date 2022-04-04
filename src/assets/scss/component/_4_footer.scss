@@ -1,4 +1,4 @@
-footer#site-footer {
+#site-footer {
 	background-color: #f5f5f5;
 	padding: 20px min(3%, 20px);
 	border-top: 1.5px solid #ddd;
@@ -34,21 +34,8 @@ footer#site-footer {
 		transition: background-color .2s;
 
 		&:hover,
-		&:active,
 		&:focus-visible {
 			background-color: #ddd;
 		}
 	}
 }
-
-// TMP
-
-/*
-
-footer {
-	width: 100%;
-	position: fixed;
-	bottom: 0;
-}
-
-*/

@@ -13,7 +13,7 @@ $bx-color: #3232321a;
 	--color: #006fff;
 }
 
-header#site-header {
+#site-header {
 	// position: fixed;
 	position: sticky;
 	inset: 0 0 auto 0;
@@ -34,15 +34,13 @@ header#site-header {
 	z-index: 2;
 
 	@media (M700(mob)) {
-		input#mob-menu:checked + & {
+		#mob-menu:checked + & {
 			background-color: #fff;
 			height: 100%;
 			height: 100vh;
 			min-height: -webkit-fill-available; /* for device width */
 
-			& ~ * {
-				visibility: hidden;
-			}
+			& ~ * { visibility: hidden }
 		}
 	}
 
@@ -67,7 +65,7 @@ header#site-header {
 				outline-offset: 4px;
 			}
 		}
-		&:is(:hover, :active) > img {
+		&:hover > img {
 			background-color: #eee;
 			box-shadow: 0 0 0 2px #eee;
 		}
@@ -119,8 +117,8 @@ header#site-header {
 
 		&::after { transform: translateY(5px); }
 
-		input#mob-menu:checked + &::before { transform: rotate(-45deg); }
-		input#mob-menu:checked + &::after { transform: rotate(45deg); }
+		#mob-menu:checked + &::before { transform: rotate(-45deg); }
+		#mob-menu:checked + &::after { transform: rotate(45deg); }
 	}
 
 	& div {
@@ -137,7 +135,7 @@ header#site-header {
 			scrollbar-width: none;
 			&::-webkit-scrollbar { display: none }
 
-			input#mob-menu:checked + & {
+			#mob-menu:checked + & {
 				visibility: visible;
 			}
 		}
@@ -161,7 +159,6 @@ header#site-header {
 			}
 
 			&:hover,
-			&:active,
 			&:focus-visible {
 				background-color: #eee;
 				border-radius: 6px;
@@ -183,7 +180,7 @@ header#site-header {
 
 			&[aria-current="page"]::before { opacity: .4 }
 
-			&:is(:hover, :active)::before { opacity: 1 }
+			&:hover::before { opacity: 1 }
 
 			&:focus-visible::before {
 				opacity: 1;
@@ -202,8 +199,8 @@ html.mob-menu-open {
 	overflow: hidden;
 }
 
-@media (hover: hover) and (pointer: fine) {
-	input#mob-menu:checked + header#site-header,
+@media (hover: hover) and (pointer: fine) { /* For Desktop */
+	#mob-menu:checked + #site-header,
 	html.mob-menu-open body {
 		overflow-y: scroll;
 	}

@@ -103,7 +103,7 @@
 		font-weight: 550;
 	}
 
-	& > button.swap {
+	& > .swap-btn {
 		white-space: break-spaces;
 		white-space: normal;
 		line-height: 10px;
@@ -111,13 +111,13 @@
 		font-weight: 700;
 		padding: 0;
 	}
-	& > button#swap-ac,
-	& > button.swap.placeholder {
+	& > #swap-ac,
+	& > .swap-btn.placeholder {
 		transform: rotate(90deg) scaleX(-1);
 		grid-area: 2;
 	}
 
-	& > button#copy-result {
+	& > #copy-result {
 		background-color: #afa;
 		grid-column-end: -1; // align right
 		justify-self: end; // don't stretch
