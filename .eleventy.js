@@ -1,5 +1,7 @@
 const beautify = require("./src/_functions/beautify");
 const minify = require("./src/_functions/minify");
+const luxon = require("./src/_functions/luxon");
+const markdownIt = require("markdown-it");
 const mdAttr = require("./src/_functions/md-attr");
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -23,6 +25,16 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addWatchTarget("src/assets/i-scss/");
 	eleventyConfig.addWatchTarget("src/assets/i-js/");
+
+
+	luxon(eleventyConfig);
+
+	const md = new markdownIt({
+		html: true
+	});
+	eleventyConfig.addPairedShortcode("markdown", (content) => {
+		return md.render(content);
+	});
 
 	mdAttr(eleventyConfig);
 
