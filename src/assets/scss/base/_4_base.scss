@@ -49,6 +49,12 @@ img, picture /*, video, canvas, svg */ {
 
 /* Other Elements START */
 
+
+hr {
+	border: none;
+	box-shadow: 0 0 0 1px #ccc;
+}
+
 table {
 	--border-color: #ccc;
 	border-collapse: collapse;

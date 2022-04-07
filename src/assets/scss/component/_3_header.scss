@@ -24,7 +24,7 @@ $bx-color: #3232321a;
 
 	background-color: #fffc;
 	backdrop-filter: blur(10px);
-	box-shadow: 0 0 20px 0 $bx-color;
+	box-shadow: 0 0 20px $bx-color;
 
 	font-size: 20px;
 
@@ -174,16 +174,17 @@ $bx-color: #3232321a;
 				border-radius: 20px;
 				background-color: #eee;
 				opacity: 0;
-				transition: opacity .2s;
+				transform: scale(.95);
+				transition: opacity .2s, transform .2s;
 				z-index: -1;
 			}
 
-			&[aria-current="page"]::before { opacity: .4 }
-
-			&:hover::before { opacity: 1 }
+			&:is(:hover, :focus-visible, [aria-current="page"])::before {
+				opacity: 1;
+				transform: scale(1);
+			}
 
 			&:focus-visible::before {
-				opacity: 1;
 				outline-offset: 2px;
 				outline: 3px solid #007bff;
 			}

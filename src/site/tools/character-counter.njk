@@ -1,0 +1,53 @@
+---
+title: Characters Counter
+seoTitle: Characters counter & Word frequency Online
+seoDesc: Character counter • word counter • sentance counter • word frequency all in one simple and eazy to use online tool
+tags: tools
+---
+
+<div id="tool-wrapper" class="full-bleed">
+	<textarea id="text" placeholder="Enter text to count" spellcheck="false" autofocus></textarea>
+
+	<div class="result"><output id="result-1" for="text" type="number">0</output> Characters</div>
+	<div class="result"><output id="result-2" for="text" type="number">0</output> Characters w/o more than 1 whitespace b/w words</div>
+	<div class="result"><output id="result-3" for="text" type="number">0</output> Words</div>
+	<div class="result"><output id="result-5" for="text" type="number">0</output> ParagraphsNS</div>
+</div>
+
+<style>
+	#text {
+		width: 100%;
+		height: 300px;
+		max-height: max(400px, 60vh);
+		resize: vertical;
+		padding: 15px;
+		border: none;
+		border-radius: clamp(0px, (100vw - 100% - 11px) * 9999, 10px);
+		outline: 2px solid #ccc;
+		overflow: auto;
+	}
+	#text:focus {
+		outline-color: #0050ff;
+		outline-offset: 0px;
+	}
+
+	.result {
+		background-color: #fafafa;
+		width: min(100%, 100vw - 20px);
+		padding: 10px 20px;
+		margin: 10px auto;
+		border: 2px solid #ccc;
+		border-radius: 10px;
+	}
+
+	@media (min-height: 300px) {
+		.result:first-of-type {
+			position: sticky;
+			bottom: 10px;
+		}
+	}
+</style>
+
+<script>
+	{% include "i-js/tools/character-counter.js" %}
+</script>

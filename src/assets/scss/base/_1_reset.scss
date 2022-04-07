@@ -14,13 +14,16 @@ input, button, select, textarea {
 	color: inherit; /* currentColor */
 }
 
-// Not <input readonly>
+// NOT <input readonly>
 input:read-only:not([readonly]),
 button:read-only {
 	user-select: none;
 	cursor: pointer;
 }
 
+textarea {
+	display: block;
+}
 
 @media (prefers-reduced-motion: reduce) {
 	*, ::before, ::after {

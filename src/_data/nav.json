@@ -5,6 +5,10 @@
 			"url": "/calculators/"
 		},
 		{
+			"title": "Tools",
+			"url": "/tools/"
+		},
+		{
 			"title": "Blog",
 			"url": "/blog/"
 		}

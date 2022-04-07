@@ -4,7 +4,7 @@
 	// max-width: 500px;
 	width: min(100%, 500px);
 	outline: 2px solid #ccc;
-	border-radius: clamp(0px, (100vw - 100% - 1px) * 9999, 20px);
+	border-radius: clamp(0px, (100vw - 100% - 11px) * 9999, 20px);
 	overflow: hidden;
 
 	@media (M400(mob)) { grid-column: 1 / -1 }

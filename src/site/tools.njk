@@ -1,0 +1,16 @@
+---
+title: Online Tools
+seoDesc: Online Tools for everyday use useful from students to professionals
+tags: root_page
+---
+
+<table>
+	<tbody>
+		{%- for tool in collections.tools -%}
+			<tr>
+				<td>{{ tool.data.title }}</td>
+				<td>⇒ <a href="{{ tool.url | url }}">{{ tool.url }}</a></td>
+			</tr>
+		{% endfor -%}
+	</tbody>
+</table>
