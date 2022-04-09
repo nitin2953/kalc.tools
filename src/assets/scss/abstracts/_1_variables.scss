@@ -6,7 +6,7 @@ $android: "Google Sans Text", "Google Sans", "Rubik", "Noto Sans", "Roboto";
 $windows: "Segoe UI Variable Display", "Segoe UI";
 $linux: "Open Sans", "Oxygen", "Cantarell", "Fira Sans", "Ubuntu";
 
-$mono: "JetBrains Mono", "SF Mono", "SFMono-Regular", "Cascadia Code", "Courier New", "Fira Code", ui-monospace, monospace;
+$mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", "SF Mono", "Cascadia Code", "Courier New", "Fira Code", monospace;
 
 $fallback: "Arial", sans-serif;
 $emoji: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -14,3 +14,7 @@ $emoji: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Sym
 
 $body-font: $apple, $android, $windows, $linux, $fallback, $emoji;
 $mono-font: $mono, $emoji;
+
+
+$mono-code: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+$mono-pre: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;

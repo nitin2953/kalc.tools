@@ -61,7 +61,7 @@ $bx-color: #3232321a;
 
 			& > img {
 				border-radius: 1px;
-				outline: 3px solid #007bff;
+				outline: 3px solid #0050ff;
 				outline-offset: 4px;
 			}
 		}
@@ -92,7 +92,7 @@ $bx-color: #3232321a;
 
 		&:focus-visible + label {
 			border-radius: 13px;
-			outline: 3px solid #007bff;
+			outline: 3px solid #0050ff;
 			outline-offset: -8px;
 		}
 	}
@@ -186,7 +186,7 @@ $bx-color: #3232321a;
 
 			&:focus-visible::before {
 				outline-offset: 2px;
-				outline: 3px solid #007bff;
+				outline: 3px solid #0050ff;
 			}
 		}
 	}

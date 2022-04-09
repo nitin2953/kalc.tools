@@ -18,11 +18,15 @@ console.log(isProduction ? "********* GULP PRODUCTION MODE *********" : "*******
 //─────────────────────────────────────────────────────────//
 
 const dir = {
+	local: {
+		js: "./local/_*.js",
+		js0: "./local/_0_local.js",
+		js1: "./local/_1_local.js",
+	},
 	src: {
 		scss: "./src/assets/scss/*.scss",
 		scsses: "./src/assets/scss/**/*.scss",
 		js: "./src/assets/js/**/_*.js",
-		local_js: "./local/local.js",
 		njk: "./src/site/**/*.njk",
 
 		i_scss: "./src/assets/i-scss/**/*.scss",
@@ -83,7 +87,7 @@ exports.i_scss = i_scss;
 //
 
 function js() {
-	return src(gulpif(isProduction, dir.src.js, [dir.src.js, dir.src.local_js]), { sourcemaps: isDevelopment })
+	return src(gulpif(isProduction, dir.src.js, [dir.local.js0, dir.src.js, dir.local.js1]), { sourcemaps: isDevelopment })
 		.pipe(concat("main.js"))
 		.pipe(gulpif(isProduction, terser(terserOptions)))
 		.pipe(dest(dir.dest.js, { sourcemaps: "." }))
@@ -106,7 +110,7 @@ function watchTask() {
 	watch(dir.src.scsses, css);
 	watch(dir.src.i_scss, i_scss);
 
-	watch(gulpif(isProduction, dir.src.js, [dir.src.js, dir.src.local_js]), js);
+	watch(gulpif(isProduction, dir.src.js, [dir.src.js, dir.local.js]), js);
 	watch(dir.src.i_js, i_js);
 
 	watch(dir.dest.html).on("change", browserSync.reload);

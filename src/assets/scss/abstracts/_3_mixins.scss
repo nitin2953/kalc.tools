@@ -2,14 +2,14 @@
 	&:focus-visible {
 		outline: none;
 		transition: box-shadow .2s ease;
-		box-shadow: 0 0 0 2px #fff, 0 0 0 5px #007bff;
+		box-shadow: 0 0 0 2px #fff, 0 0 0 5px #0050ff;
 	}
 }
 
 @mixin focus-ring($br, $ow: 3px, $of: 2px) {
 	&:focus-visible {
 		border-radius: $br; // 0
-		outline: $ow solid #007bff; // $focus-color
+		outline: $ow solid #0050ff; // $focus-color
 		outline-offset: $of;
 		// @if @else
 	}

@@ -24,17 +24,17 @@ function debounce(func, wait, immediate) {
 	};
 }
 
+
 const pre = document.querySelectorAll("pre");
 
-function log() {
+function checkOverflow() {
 	pre.forEach(el => {
-		if (el.scrollHeight > el.offsetHeight || el.scrollWidth > el.offsetWidth) {
-			el.setAttribute("tabindex", "0");
-		} else {
-			el.removeAttribute("tabindex");
-		}
+		if (el.scrollHeight > el.offsetHeight || el.scrollWidth > el.offsetWidth) el.setAttribute("tabindex", "0");
+		else el.removeAttribute("tabindex");
 	});
-	console.log("resizing");
 }
-log();
-window.addEventListener("resize", debounce(log, 500));
+
+if (pre.length > 0) {
+	checkOverflow();
+	window.addEventListener("resize", debounce(checkOverflow, 500));
+}

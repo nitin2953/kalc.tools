@@ -64,13 +64,13 @@ details {
 
 /* CODE */
 
-mark, code, pre, details { border-radius: .4em }
+mark, samp, code, pre, details { border-radius: .4em }
 
 code, pre { background-color: #eee; }
 
-code {
+samp, code {
 	font-style: normal;
-	font-size: clamp(16px, calc(.97rem + .17vw), 17px);
+	font-size: clamp(16px, calc(.97rem + .17vw), 17px); // 95%
 	padding: 0 .2em;
 }
 
