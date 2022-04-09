@@ -1,7 +1,7 @@
 // ({
 // 	plugins: ["jsdom-quokka-plugin"],
 // 	jsdom: {
-// 		"file": "dist/tools/character-counter/index.html"
+// 		"file": "dist/tools/text/character-counter/index.html"
 // 	}
 // })
 

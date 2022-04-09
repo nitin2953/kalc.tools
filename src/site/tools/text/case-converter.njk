@@ -1,0 +1,71 @@
+---
+title: Text Case Converter
+seoTitle: Text Case Converter Online [+ pro tips]
+seoDesc: Convert any amount of text to uppercase, lowercase, title case, camel case, snake case, or kebab case. Enter text, choose from file or paste webpage url.
+tags: tools
+---
+
+<div id="tool-wrapper" class="full-bleed">
+	<textarea id="text" placeholder="Enter text to convert case" spellcheck="false" autofocus></textarea>
+
+	<div id="button-wrapper">
+		<button id="title"><samp>Title Case</samp></button>
+		<button id="sentence"><samp>Sentence case</samp></button>
+		<button id="upper"><samp>UPPER CASE</samp></button>
+		<button id="lower"><samp>lower case</samp></button>
+		<button id="camel"><samp>camelCase</samp></button>
+		<button id="pascal"><samp>PascalCase</samp></button>
+		<button id="kebab-u"><samp>KEBAB-UPPER</samp></button>
+		<button id="kebab-l"><samp>kebab-lower</samp></button>
+		<button id="snake-u"><samp>SNAKE_UPPER</samp></button>
+		<button id="snake-l"><samp>snake_lower</samp></button>
+	</div>
+</div>
+<strong>⚠️ Some cases are irreversible / none-swappable.</strong>
+
+<style>
+	#text {
+		width: 100%;
+		height: 300px;
+		max-height: max(400px, 60vh);
+		resize: vertical;
+		padding: 15px;
+		border: none;
+		border-radius: clamp(0px, (100vw - 100% - 11px) * 9999, 10px);
+		outline: 2px solid #ccc;
+		overflow: auto;
+	}
+	#text:focus {
+		outline-color: #0050ff;
+		outline-offset: 0px;
+	}
+
+	#button-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		width: min(100%, 100vw - 20px);
+		margin: 12px auto;
+	}
+
+	#button-wrapper button {
+		padding: 1.5px 12px 1px;
+		background: #eee;
+		border: none;
+		border-radius: 50px;
+	}
+
+	#button-wrapper button:active {
+		background-color: #0050ff;
+		color: #fff;
+	}
+
+	#button-wrapper button:focus-visible {
+		outline: 3px solid #0050ff;
+		outline-offset: 2px;
+	}
+</style>
+
+<script>
+	{% include "i-js/tools/case-converter.js" %}
+</script>
