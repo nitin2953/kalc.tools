@@ -22,3 +22,16 @@ $max-width-400: "max-width: 400px"; // @400(mob)
 		@return $max-width-400;
 	}
 }
+
+
+$min-width-600: "min-width: 601px"; // @600(desk)
+$max-width-600: "max-width: 600px"; // @600(mob)
+
+@function M600($device) {
+	@if ($device == "desk") {
+		@return $min-width-600;
+	}
+	@else if ($device == "mob") {
+		@return $max-width-600;
+	}
+}

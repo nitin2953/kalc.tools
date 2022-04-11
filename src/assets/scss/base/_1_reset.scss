@@ -12,6 +12,7 @@
 input, button, select {
 	font: inherit;
 	color: inherit; /* currentColor */
+	-webkit-appearance: none;
 }
 
 // NOT <input readonly>
