@@ -12,7 +12,13 @@
 input, button, select {
 	font: inherit;
 	color: inherit; /* currentColor */
-	-webkit-appearance: none;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
 }
 
 // NOT <input readonly>
@@ -24,6 +30,8 @@ button:read-only {
 
 textarea {
 	display: block;
+	font-size: 16px;
+   line-height: 1.6;
 }
 
 @media (prefers-reduced-motion: reduce) {

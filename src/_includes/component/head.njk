@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	{% if seoTitle or title -%}
-	<title>{{ site.title if page.url === '/' else seoTitle or title | safe }}</title>
+	<title>{{ site.title if page.url === '/' else seoTitle | safe or title | safe }}</title>
 	{%- endif %}
 
 	{%- if seoDesc or desc %}
