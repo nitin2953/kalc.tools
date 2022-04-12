@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 .mxw {
 	// width: 100%; /* Probably UnNeeded */
 	// max-width: 1200px;
@@ -11,21 +13,12 @@
 
 
 h1 {
-	text-align: center;
 	margin-bottom: 40px;
 	margin-bottom: 50px;
 
-	@media (max-width: 600px) { text-align: unset }
+	@media (M600(desk)) { text-align: center }
 }
 
-main#main h1::after {
-	content: "";
-	display: block;
-	width: 125px;
-	height: 4px;
-	background-color: currentColor;
-	margin: 10px auto;
-}
 
 .m-align-center {
 	margin: 0 auto;
