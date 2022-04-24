@@ -27,7 +27,7 @@
 	buttons.forEach(button => button.addEventListener("click", changeCase));
 
 	function copyResult() {
-		if (text.value) navigator.clipboard.writeText(text.value); // only work on https
+		if (text.value) navigator.clipboard.writeText(text.value);
 	}
 	copyBtn.addEventListener("click", copyResult);
 })();

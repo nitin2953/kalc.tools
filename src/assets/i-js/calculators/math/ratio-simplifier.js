@@ -68,9 +68,15 @@
 	}
 	calcInputs.forEach(input => input.addEventListener("input", calcRatio));
 
+	function selectResult() {
+		this.select();
+	}
+	x.addEventListener("click", selectResult);
+	y.addEventListener("click", selectResult);
+
 	function copyResult() {
 		if (x.value && y.value) {
-			navigator.clipboard.writeText(x.value + ":" + y.value); // only work on https
+			navigator.clipboard.writeText(x.value + ":" + y.value);
 		}
 	}
 	copyBtn.addEventListener("click", copyResult);
