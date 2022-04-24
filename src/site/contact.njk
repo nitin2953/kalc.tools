@@ -15,7 +15,7 @@ tags: root_page
 	<p>For <strong>not so serious</strong> Questions, Feedback, Bug report & Tools requests, please use <a href="{{ site.git.issue }}" target="blank">issues</a> & <a href="{{ site.git.discs }}" target="blank">discussion</a> at kalc tools' public <a href="{{ site.git.repo }}" target="blank">Github repository</a>.</p>
 </div>
 
-<iframe loading="eager" class="full-bleed" src="https://kalc-tools.netlify.app/contact/" title="Contact Form"></iframe>
+<iframe loading="eager" src="https://kalc-tools.netlify.app/contact/" title="Contact Form"></iframe>
 
 <style>
 	.tip {
@@ -43,9 +43,10 @@ tags: root_page
 		text-underline-offset: 3px;
 	}
 	iframe {
-		width: 100%;
+		width: calc( 100% + 10px);
 		height: 700px;
 		border: none;
+		margin: 0 -5px;
 	}
 </style>
 
