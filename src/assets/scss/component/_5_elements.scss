@@ -62,14 +62,15 @@ details {
 }
 
 
-/* CODE */
+/* MISC */
 
-mark, samp, code, pre, details { border-radius: .4em }
+mark, samp, kbd, code, pre, details { border-radius: .4em }
 
-code, pre { background-color: #eee; }
+kbd, code, pre { background-color: #eee; }
 
-samp, code {
+samp, kbd, code {
 	font-style: normal;
+	font-weight: normal;
 	font-size: clamp(16px, calc(.97rem + .17vw), 17px); // 95%
 	padding: 0 .2em;
 }
@@ -116,7 +117,9 @@ pre {
 	// }
 }
 
-
-/* MISC */
+kbd {
+	box-shadow: inset 0 0 0 1px #ccc, 0 1px #ccc;
+	padding: 0.1em 0.4em;
+}
 
 mark { background-color: #fffa36 } // #fff900

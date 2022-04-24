@@ -16,7 +16,7 @@ html:not(:focus-within) {
 	/* outline: .1px solid #ccc; */
 	/* display: none; */
 
-	&-track { background: #fafafa }
+	&-track { background-color: #fafafa }
 	&-track:vertical { border-left: .1px solid #ccc }
 	&-track:horizontal { border-top: .1px solid #ccc }
 

@@ -18,7 +18,18 @@ button,
 [type=button],
 [type=reset],
 [type=submit] {
-  -webkit-appearance: button;
+	-webkit-appearance: button;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+	opacity: 0;
+}
+input[type="date"] {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-size: 20px;
+	background-position: calc(100% - 6px) center;
+	-webkit-appearance: none;
 }
 
 // NOT <input readonly>
@@ -31,7 +42,7 @@ button:read-only {
 textarea {
 	display: block;
 	font-size: 16px;
-   line-height: 1.6;
+	line-height: 1.6;
 }
 
 @media (prefers-reduced-motion: reduce) {

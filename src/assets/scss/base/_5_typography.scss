@@ -45,7 +45,7 @@ html {
 // body { font-size: clamp(1.13rem, calc(1.04rem + .37vw), 1.25rem) } //  18 (360) | 20 (900)
 body { font-size: clamp(17.5px, calc(0.99rem + 0.34vw), 19px) } //  17 (320) | 19 (900)
 
-pre, code, samp, textarea { font-family: $mono-font }
+kbd, pre, code, samp, textarea { font-family: $mono-font }
 
 /* html.fonts-loaded {
 	font-feature-settings:
