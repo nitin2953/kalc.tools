@@ -5,7 +5,7 @@ const minifierConfig = {
 	collapseWhitespace: true,
 	// collapseInlineTagWhitespace: true,
 	decodeEntities: true,
-	ignoreCustomComments: [ /\|\| श्री \|\|/ ],
+	ignoreCustomComments: [ /।। श्री ।।/ ],
 	minifyCSS: true,
 	minifyJS: true,
 	// minifyURLs: true,
@@ -20,7 +20,7 @@ const minifierConfig = {
 function minify(content, outputPath) {
 	if (!outputPath) return;
 
-	if(outputPath.endsWith(".html") ) {
+	if (outputPath.endsWith(".html") ) {
       return minifier(content, minifierConfig);
    }
 	return content;
