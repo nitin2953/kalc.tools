@@ -1,0 +1,16 @@
+---
+title: Date & Time Calculators
+seoTitle: Date & Time Calculators Online
+seoDesc: Calculate the date and time of a specific event. Add or subtract time periods. Convert between time formats. Calculate the time difference between two dates. Convert to your local time.
+---
+
+<table>
+	<tbody>
+		{%- for calc in collections.time_calculators -%}
+			<tr>
+				<td>{{ calc.data.title }}</td>
+				<td>⇒ <a href="{{ calc.url | url }}">{{ calc.url }}</a></td>
+			</tr>
+		{% endfor -%}
+	</tbody>
+</table>

@@ -1,0 +1,49 @@
+---
+title: Age & Birth Date Calculator
+seoTitle: Age & Birth Date Calculator Online
+seoDesc: Calculate someone's age and upcoming birth date in years, months, days, hours, minutes & seconds.
+---
+
+<div class="calc-wrapper">
+	<form id="calc-form" class="calc-form">
+		<strong>Your date format is <code id="date-locale"></code></strong>
+
+		<label for="a" class="ltr">Birth Date: <input id="a" type="date" name="a" required autofocus></label>
+		<label for="b" class="ltr">Age on Date: <input id="b" type="date" name="b" required></label>
+
+		<button type="reset">Clear</button>
+		<button type="submit" class="sr-only" tabindex="-1">Calculate Age & Upcoming Birthday</button>
+	</form>
+
+	<div id="calc-equation" class="calc-equation">
+		<span id="bday" style="display: none;">🎉 TODAY IS YOUR BIRTHDAY! 🎉</span>
+		<span id="age">Age: - years | - months | - days</span>
+		{# <span id="next-birthday"></span> #}
+	</div>
+</div>
+
+<style>
+
+	{% include "i-css/calc.css" %}
+
+	#calc-form {
+		grid-template-columns: max-content;
+		grid-auto-rows: 40px;
+		justify-content: center;
+	}
+
+	#calc-form label {
+		justify-content: space-between;
+	}
+
+	#calc-form label > input {
+		width: 165px;
+		height: 30px;
+		padding: 0 5px;
+	}
+
+</style>
+
+<script>
+	{% include "i-js/calculators/time/age.js" %}
+</script>
