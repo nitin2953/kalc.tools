@@ -8,6 +8,7 @@
 !(()=>{
 	const text = document.getElementById("text");
 	const buttons = [...document.getElementById("button-wrapper").children];
+	const copyBtn = document.getElementById("copy-result");
 
 	function changeCase() {
 		switch (this.id) {
@@ -24,4 +25,9 @@
 		}
 	}
 	buttons.forEach(button => button.addEventListener("click", changeCase));
+
+	function copyResult() {
+		if (text.value) navigator.clipboard.writeText(text.value); // only work on https
+	}
+	copyBtn.addEventListener("click", copyResult);
 })();
