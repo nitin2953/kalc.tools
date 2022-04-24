@@ -12,8 +12,8 @@ title: Percentage Calculator
 		<label for="x" class="ltr result">=<input id="x" type="number" placeholder="40" readonly /></label>
 
 		<button type="button" id="copy-result">Copy ↑</button>
-		<input type="reset" value="Clear" />
-		<input type="submit" value="Simplify Ratio" class="sr-only" tabindex="-1">
+		<button type="reset">Clear</button>
+		<button type="submit" class="sr-only" tabindex="-1">Simplify Ratio</button>
 	</form>
 
 	<div id="calc-equation-1" class="calc-equation">
@@ -39,7 +39,7 @@ title: Percentage Calculator
 		grid-template-columns: repeat(3, minmax(100px, 140px));
 	}
 
-	#calc-form-1 > input[type=reset] {
+	#calc-form-1 > [type="reset"] {
 		grid-row-start: 2;
 	}
 
@@ -47,7 +47,7 @@ title: Percentage Calculator
 		#calc-form-1 {
 			grid-template-columns: repeat(2, 1fr);
 		}
-		#calc-form-1 > input[type=reset] {
+		#calc-form-1 > [type="reset"] {
 			grid-row-start: 3;
 		}
 		#calc-form-1 > label[for="x"] {
