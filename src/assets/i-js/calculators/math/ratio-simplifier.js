@@ -1,3 +1,10 @@
+// ({
+// 	plugins: ["jsdom-quokka-plugin"],
+// 	jsdom: {
+// 		"file": "dist/calculators/math/ratio-simplifier/index.html"
+// 	}
+// })
+
 !(()=>{
 	const calcForm = document.querySelector("#calc-form");
 	const calcInputs = calcForm.querySelectorAll('input[type="number"]');
@@ -87,7 +94,7 @@
 	//
 
 	const swapBtnAB = document.getElementById('swap-ab');
-	const swapBtnAC = document.getElementById('swap-ac');
+	// const swapBtnAC = document.getElementById('swap-ac');
 
 	function swapValue(a, b) {
 		[a.value, b.value] = [b.value, a.value];

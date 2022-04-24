@@ -4,6 +4,7 @@
 // 		"file": "dist/calculators/math/ratio/index.html"
 // 	}
 // })
+
 !(()=>{
 	const calcForm = document.querySelector("#calc-form");
 	const calcInputs = calcForm.querySelectorAll('input[type="number"]');
