@@ -18,6 +18,9 @@ module.exports = function (eleventyConfig) {
 		// "./src/assets/js/main.js": "assets/js/main.js",
 		// "./src/assets/scss/main.css": "assets/css/main.css",
 	});
+	eleventyConfig.addPassthroughCopy("./src/site/*.svg");
+	eleventyConfig.addPassthroughCopy("./src/site/*.png");
+	eleventyConfig.addPassthroughCopy("./src/site/*.ico");
 
 
 	eleventyConfig.addWatchTarget("src/_includes/i-css/");
