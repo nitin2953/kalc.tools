@@ -28,7 +28,7 @@
 		background-color: #eee;
 		padding: 5px;
 		border-radius: 12px;
-		user-select: none;
+		// user-select: none;
 
 		&.ltr { padding-left: 10px }
 
@@ -44,9 +44,9 @@
 			outline-offset: -3px;
 		}
 
-		& > input[type="number"] {
+		& > input {
 			width: 100%;
-			background: #fff;
+			background-color: #fff;
 			box-shadow: 0px 1px 1px #0004;
 			border: none;
 			border-radius: 7px;
@@ -70,7 +70,7 @@
 				outline: none;
 			}
 
-			& > input[type="number"] {
+			& > input {
 				background-color: transparent;
 				box-shadow: none;
 				border-radius: 0;
@@ -93,17 +93,17 @@
 		}
 	}
 
-	& > input,
-	& > button {
+	& input,
+	& button {
 		border: none;
 		background-color: #eee;
 		border-radius: 12px;
 		padding: 0 10px;
 		/* min-width: fit-content; */
-		font-weight: 550;
 	}
+	& button { font-weight: 550 }
 
-	& > .swap-btn {
+	& .swap-btn {
 		white-space: break-spaces;
 		white-space: normal;
 		line-height: 10px;
@@ -111,19 +111,19 @@
 		font-weight: 700;
 		padding: 0;
 	}
-	& > #swap-ac,
-	& > .swap-btn.placeholder {
+	& .swap-btn.rotate,
+	& .swap-btn.placeholder {
 		transform: rotate(90deg) scaleX(-1);
 		grid-area: 2;
 	}
 
-	& > #copy-result {
+	& #copy-result {
 		background-color: #afa;
 		grid-column-end: -1; // align right
 		justify-self: end; // don't stretch
 	}
 
-	& > input[type="reset"] {
+	& [type="reset"] {
 		background-color: #fcc;
 		grid-column-start: 1; // align left (probably not needed as this will be the last element thus always align left by default)
 		justify-self: start;
