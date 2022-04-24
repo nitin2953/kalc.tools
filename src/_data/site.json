@@ -25,5 +25,11 @@
 		"contact":      { "title": "Contact",      "url": "/contact/"     },
 		"legal":        { "title": "Legal",        "url": "/legal/"       },
 		"sitemap":      { "title": "Sitemap",      "url": "/sitemap.xml"  }
+	},
+
+	"git": {
+		"repo": "https://github.com/nitin2953/kalc.tools-public",
+		"issue": "https://github.com/nitin2953/kalc.tools-public/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc",
+		"discs": "https://github.com/nitin2953/kalc.tools-public/discussions"
 	}
 }
