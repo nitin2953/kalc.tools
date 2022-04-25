@@ -1,47 +1,63 @@
 ---
-title: ☰ Animated hamburger menu inspired by apple.com in vanilla javascript
-seoDesc: Get to know some very basic concepts of vanilla javascript by creating a animated hamburger menu inspired by apple.com.
+title: Hamburger Menu With Only CSS or Some JavaScript
+seoDesc: Get to know some smart CSS selectors, properties and very basic concepts of vanilla JavaScript by creating a animated hamburger menu with only CSS or some JavaScript
 ---
 
-Hamburger menus are the got to solution for mobile navigation. They are a great way to show your site visitors that you have a mobile friendly navigation, through which they can access your site. But as a beginner, you might not know how to create a hamburger menu or how to animate it. In this article you will learn to do various things to create a hamburger menu.
-Such as:
+When new developers think of making a navigation menu, they imagine a horizontal links inside `<header>` element for desktop and a hamburger menu as the go to solution for mobile, thought they don't. They are not friendly for mobile friendly navigation neither in past present or future on which we will discuse later.
+But as a beginner web developer, you **have to know** how to create an intractive element and/or how to animate it. In this article you will learn some lesser known CSS selectors and properties to create a hamburger menu with best practices and some very basic concepts of vanilla JavaScript to make it acceceble for screen readers.
 
-- Create a aria accessible hamburger menu html structure
-- Style it with CSS, add addition styles for animating it & stop `<body>` from scrolling when the menu is open
-- Add event listeners to the hamburger menu `<button>` element to listen for click events & change class of hamburger menu
+<!-- Such as:
 
-## Prerequisites
-You will just need to have a basic understanding of html and css to create a hamburger menu, as you will learn how to open & close it with JavaScript in this article.
+- Aria accessible hamburger menu html structure
+- CSS styling add addition styles for animating it & prevent `<body>` from scrolling when the menu is open
+- Add event listeners to the menu `<button>` to listen for click events & change classes
+-->
 
-## Creating initial menu structure
-1. First we will create a `<header>` element with a `<nav>` element inside it.
-	```html
-	<header id="site-header">
-		<nav>
-			•••
-		</nav>
-	</header>
-	```
-2. Then add some basic elements inside `<nav>` element it such as logo link any CTA buttons.
-	```html
-	<a id="logo" href="/" title="Company Home"><img src="/logo.png" alt="Company Logo"></a>
-	•••
-	```
-3. At last we will create hamburger menu's `<button>` element & and an `<ul>` menu inside the `<nav>` element after logo anchor.
-	```html
-	<button id="ham-btn"></button>
-	<ul id="menu">
-		<li><a href="/">Home</a></li>
-		<li><a href="/categories/">Categories</a></li>
-		<li><a href="/tags/">Tags</a></li>
-		<li><a href="/blog/">Blog</a></li>
-	</ul>
-	```
-This is just the initial structure of the hamburger menu, we will add some more elements (for improving accessibility) to it later.
+Here are some key features that we want in our hamburger menu:
+- Responsive to look good on majority of mobile devices
+- Accessible for screen readers & keyboard users
+- Non janky smooth animation
+- Prevent `<body>` from scrolling when the menu is open
 
-## Styling it with \*CSS\*
+## Prerequisites & Discalimer
+You will only need basic understanding of html and css to create the hamburger & menu and little "bytes" of JavaScript to make it accecible.
 
--	```css
+
+## About the Hamburger Menu
+
+## Creating menu structure
+
+The structure of the menu includes a `<header>` element with a `<nav>` element inside it to make screen reader read then as a navigation area. Then a `<nav>` element with a logo (optional), a `<button>` element to toggle the menu and a `<ul>` element to hold the menu items.
+
+Our HTML will look like below, <abbr title="By The Way">BTW</abbr> this is just the initial structure of the hamburger menu, we will add some more elements and attributes to improve accessibility later.
+
+```html
+<header id="site-header">
+	<nav>
+
+		<a id="logo" href="/" title="Company Home">
+			<img src="/logo.png" alt="Company Logo">
+		</a>
+
+		<button id="ham-btn"></button>
+		<ul id="menu">
+			<li><a href="/">Home</a></li>
+			<li><a href="/categories/">Categories</a></li>
+			<li><a href="/tags/">Tags</a></li>
+			<li><a href="/blog/">Blog</a></li>
+		</ul>
+
+	</nav>
+</header>
+```
+
+\---
+
+## Styling it with CSS
+
+
+-	First reset and normalize our css.
+	```css
 	* {
 		box-sizing: border-box;
 		padding: 0;
@@ -50,3 +66,17 @@ This is just the initial structure of the hamburger menu, we will add some more 
 	```
 
 - `<header>` should be full width & `<nav>` should be used as `max-width` wrapper to keep everything in center on larger screens.
+	```css
+	#site-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 50px;
+		background-color: #fff;
+		box-shadow: 0 0 20px #3232321a;
+		font-size: 20px;
+		overflow: hidden;
+		z-index: 2;
+	}
+	```

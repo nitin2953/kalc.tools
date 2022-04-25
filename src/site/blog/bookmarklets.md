@@ -50,7 +50,7 @@ They can do much more a developer can think of, including:
 - Get you IP Address.
 
 ## How to create a bookmarklet
-Bookmarklets are fairly easy to create if you know how JavaScript code works. But if you are just a normal web surfer, you can create a bookmarklet by following these steps:{# refer to this guide [kalc.tools/resources/guides/bookmakrlets] #}
+Bookmarklets are fairly easy to create if you know how JavaScript code works. But if you are just a normal user, you can also create a bookmarklet by following these steps:{# refer to this guide [kalc.tools/resources/guides/bookmakrlets] #}
 
 ### First lets see how a bookmarklet looks like
 A bookmarklet can be as simple as `javascript:alert(document.url)` or as complex as below.
@@ -73,11 +73,42 @@ javascript:!(()=>{alert(document.url);})();
 1. <dfn>`javascript:`</dfn> it is a protocol similar to `http:` or `https:`, which tell the browser to treat words after it as JavaScript code not a page hyperlink.
 
 2. `!(function(){...})()` is a function declaration inside a <abbr title="Immediately-Invoked Function Expression">IFEE</abbr> and a <dfn>`!`</dfn> exclamation mark at the beginning, it has many characteristics:
-	1. <dfn>`function(){...}`</dfn> a function declaration just declare a function, it will not execute it until it is called. A function without a name is called anonymous function. It can only be called within an IFEE expression, when stored as a variable or 
+	1. <dfn>`function(){...}`</dfn> a function declaration just declare a function, it will not execute it until it is called (more below). A function without a name is called anonymous function. It can only be executed/called within an IFEE expression, when stored as a variable or a property of an object.
 	2. <dfn>`(...)()`</dfn> IFEE which stand for [Immediately-Invoked Function Expression](https://developer.mozilla.org/en-US/docs/Glossary/IIFE), used to execute the code inside it as soon as it is defined/declared.
 	3. `!` since the above IFEE expression return undefined when ran standalone, we use `!` exclamation mark at the beginning to invert it as `true`.
 
 3. The `function(){...}` can be further minified using ES6 arrow function to be like `() => {...}`, there are some [limitations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#:~:text=Differences%20%26%20Limitations%3A) with arrow funciton, so we use a legacy function declaration instead.
 
-4. At last <dfn>`;`</dfn> semi colon is used to tell the browser that the code statement is finished. so that it don't mess up with next code. You will have to use it after every statement of code.
+4. At last <dfn>`;`</dfn> semi colon is used to tell the browser that one statement is finished (so that it don't mess up with next statement). You will have to use it after every statement inside the function.
 
+### Writing functions & expression
+A expression/statement can be understood by the examples below.
+
+**First open your Browser DevTools's Console by:**
+- Right clicking anywhere on the page and select "Inspect Element" then click "Console" at top
+- Keyboard shortcut:
+	<kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>i</kbd> for "Inspect Element" OR
+	<kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>j</kbd> for directly opening "Console"
+- Click three dots at the top right corner of the browser window -> "More Tools" -> "Developer Tools"
+
+Expression example (run one by one but not `//` comment):
+```javascript
+1+2
+// 3
+
+4*5
+// 20
+
+22/7
+// 3.142857142857143
+
+location.href
+// 'https://kalc.tools/blog/bookmarklets/'
+
+document.title
+// 'What are Bookmarklets ? How to create & use them ?'
+```
+
+A function is a block of code that can execute any number of expressions/statement and other functions.
+
+Example of a expression/statement:
