@@ -103,10 +103,10 @@ Expression example (run one by one but not `//` comment):
 // 3.142857142857143
 
 location.href
-// 'https://kalc.tools/blog/bookmarklets/'
+// "https://kalc.tools/blog/bookmarklets/"
 
 document.title
-// 'What are Bookmarklets ? How to create & use them ?'
+// "What are Bookmarklets ? How to create & use them ?"
 ```
 
 A function is a block of code that can execute any number of expressions/statement and other functions.
