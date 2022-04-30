@@ -7,34 +7,24 @@ const body = document.body;
 }); */
 
 
-// make a debounce function
-function debounce(func, wait, immediate) {
-	var timeout;
-	return function() {
-		var context = this,
-			args = arguments;
-		var later = function() {
-			timeout = null;
-			if (!immediate) func.apply(context, args);
-		};
-		var callNow = immediate && !timeout;
+function debounce(callback, delay) {
+	let timeout;
+	return (...args) => {
+		const context = this;
 		clearTimeout(timeout);
-		timeout = setTimeout(later, wait);
-		if (callNow) func.apply(context, args);
+		timeout = setTimeout(() => callback.apply(context, args), delay);
 	};
 }
 
+const code = document.querySelectorAll("pre > code");
 
-const pre = document.querySelectorAll("pre");
-
-function checkOverflow() {
-	pre.forEach(el => {
-		if (el.scrollHeight > el.offsetHeight || el.scrollWidth > el.offsetWidth) el.setAttribute("tabindex", "0");
-		else el.removeAttribute("tabindex");
+if (code.length > 0) {
+	const resizeObserver = new ResizeObserver(entry => {
+		entry.forEach( e => {
+			if (e.target.scrollWidth > e.target.offsetWidth) {
+				e.target.setAttribute("tabindex", "0")
+			} else e.target.removeAttribute("tabindex");
+		});
 	});
-}
-
-if (pre.length > 0) {
-	checkOverflow();
-	window.addEventListener("resize", debounce(checkOverflow, 500));
+	code.forEach(c => resizeObserver.observe(c));
 }
