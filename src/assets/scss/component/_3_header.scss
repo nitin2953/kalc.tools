@@ -22,8 +22,12 @@ $bx-color: #3232321a;
 	@media (M700(desk)) { height: 60px }
 	@media (max-height: 320px) { top: -60px }
 
-	background-color: #fffc;
-	backdrop-filter: blur(10px);
+	background-color: #fff;
+	@supports (backdrop-filter: blur(10px)) {
+		background-color: #fffc;
+		backdrop-filter: blur(10px);
+	}
+
 	box-shadow: 0 0 20px $bx-color;
 
 	font-size: 20px;
