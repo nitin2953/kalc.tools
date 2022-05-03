@@ -7,7 +7,7 @@
 
 !(()=>{
 	const text = document.getElementById("text");
-	const buttons = [...document.getElementById("button-wrapper").children];
+	const buttons = [...document.getElementById("button-wrpr").children];
 	const copyBtn = document.getElementById("copy-result");
 
 	function changeCase() {
