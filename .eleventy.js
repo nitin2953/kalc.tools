@@ -22,6 +22,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("./src/site/*.png");
 	eleventyConfig.addPassthroughCopy("./src/site/*.ico");
 
+	eleventyConfig.addWatchTarget("src");
 
 	eleventyConfig.addWatchTarget("src/_includes/i-css/");
 	eleventyConfig.addWatchTarget("src/_includes/i-js/");

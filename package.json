@@ -13,6 +13,7 @@
     "gulp:build": "gulp build",
     "watch": "npm-run-all --parallel 11ty:watch gulp:watch",
     "serve": "npm-run-all --parallel 11ty:watch gulp:serve",
+    "proserve": "cross-env NODE_ENV=production npm-run-all --parallel 11ty:watch gulp:serve",
     "test": "npm-run-all clean gulp:build 11ty:build",
     "build": "cross-env NODE_ENV=production npm-run-all clean gulp:build 11ty:build"
   },
