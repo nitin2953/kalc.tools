@@ -16,6 +16,7 @@ function debounce(callback, delay) {
 	};
 }
 
+
 const code = document.querySelectorAll("pre > code");
 
 if (code.length > 0) {

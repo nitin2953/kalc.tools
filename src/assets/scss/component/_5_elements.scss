@@ -10,9 +10,15 @@
 	margin-top: 1em !important;
 	transition: background-color .1s linear, color .1s linear;
 
-	&:is(:hover, :focus-visible) {
+	&:is(:active, :focus-visible) {
 		background-color: #fff;
 		color: var(--bgcolor-primary);
+	}
+	@media (hover: hover) {
+		&:hover {
+			background-color: #fff;
+			color: var(--bgcolor-primary);
+		}
 	}
 }
 
