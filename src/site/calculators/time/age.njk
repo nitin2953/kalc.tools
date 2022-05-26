@@ -16,6 +16,8 @@ seoDesc: Calculate someone's age and upcoming birth date in years, months, days,
 		<button type="submit" class="sr-only" tabindex="-1">Calculate Age & Upcoming Birthday</button>
 	</form>
 
+	{# ADD :in-range and :out-of-range STYLING #}
+
 	<div id="calc-equation" class="calc-equation">
 		<span id="bday" style="display: none;">🎉 TODAY IS YOUR BIRTHDAY! 🎉</span>
 		<span id="age">Age: - years | - months | - days</span>
@@ -44,6 +46,10 @@ seoDesc: Calculate someone's age and upcoming birth date in years, months, days,
 	}
 
 </style>
+
+<script>
+	{% include "i-js/jc-temporal.js" %}
+</script>
 
 <script>
 	{% include "i-js/calculators/time/age.js" %}
