@@ -2,11 +2,13 @@
 title: Age & Birth Date Calculator
 seoTitle: Age & Birth Date Calculator Online
 seoDesc: Calculate someone's age and upcoming birth date in years, months, days, hours, minutes & seconds.
+pageScripts:
+  - /assets/js/temporal.js
 ---
 
 <div class="calc-wrpr">
 	<form id="calc-form" class="calc-form">
-		<strong>Your date format is <code id="date-locale"></code></strong>
+		<strong>Your date format is <samp id="date-locale"></samp> <samp id="system-lang"></samp></strong>
 
 		<label for="a" class="ltr">Birth Date<input id="a" type="date" name="a" required autofocus></label>
 		<label for="b" class="ltr">As of Date<input id="b" type="date" name="b" required></label>
@@ -46,10 +48,6 @@ seoDesc: Calculate someone's age and upcoming birth date in years, months, days,
 	}
 
 </style>
-
-<script>
-	{% include "i-js/jc-temporal.js" %}
-</script>
 
 <script>
 	{% include "i-js/calculators/time/age.js" %}

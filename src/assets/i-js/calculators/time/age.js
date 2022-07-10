@@ -14,8 +14,10 @@
 	const age = document.getElementById("age");
 
 	const dateFormat = document.getElementById("date-locale");
-	dateFormat.textContent = new Date().toLocaleDateString(); //
-	dateFormat.onclick = () => { aInput.value = "2022-02-28"; bInput.value = "2022-04-01"; calcAge() }; //
+	const sysLang = document.getElementById("system-lang");
+	dateFormat.textContent = new Date("2003-05-29").toLocaleDateString();
+	sysLang.textContent = navigator.language.toUpperCase();
+	dateFormat.onclick = () => { aInput.value = "2003-05-29"; bInput.valueAsDate = new Date(); calcAge() };
 
 	bInput.valueAsDate = new Date();
 
