@@ -19,14 +19,15 @@ console.log(isProduction ? "********* GULP PRODUCTION MODE *********" : "*******
 
 const dir = {
 	local: {
-		js: "./local/_*.js",
-		js0: "./local/_0_local.js",
-		js1: "./local/_1_local.js",
+		jses: "./local/*.js",
+		js_1: "./local/1.js",
+		js_2: "./local/2.js",
 	},
 	src: {
 		scss: "./src/assets/scss/*.scss",
 		scsses: "./src/assets/scss/**/*.scss",
-		js: "./src/assets/js/**/_*.js",
+		main_js: "./src/assets/js/main/*.js",
+		sec_js: "./src/assets/js/*.js",
 		njk: "./src/site/**/*.njk",
 
 		i_scss: "./src/assets/i-scss/**/*.scss",
@@ -84,16 +85,24 @@ function i_scss() {
 }
 exports.i_scss = i_scss;
 
-//
+//─────────────────────────────────────────────────────────//
 
-function js() {
-	return src(gulpif(isProduction, dir.src.js, [dir.local.js0, dir.src.js, dir.local.js1]), { sourcemaps: isDevelopment })
+function js_1() {
+	return src(gulpif(isProduction, dir.src.main_js, [dir.local.js_1, dir.src.main_js, dir.local.js_2]), { sourcemaps: isDevelopment })
 		.pipe(concat("main.js"))
 		.pipe(gulpif(isProduction, terser(terserOptions)))
 		.pipe(dest(dir.dest.js, { sourcemaps: "." }))
 		.pipe(browserSync.stream());
 }
-exports.js = js;
+exports.js_1 = js_1;
+
+function js_2() {
+	return src(dir.src.sec_js, { sourcemaps: isDevelopment })
+		.pipe(gulpif(isProduction, terser(terserOptions)))
+		.pipe(dest(dir.dest.js, { sourcemaps: "." }))
+		.pipe(browserSync.stream());
+}
+exports.js_2 = js_2;
 
 function i_js() {
 	return src(dir.src.i_js)
@@ -102,18 +111,20 @@ function i_js() {
 }
 exports.i_js = i_js;
 
-//
+//─────────────────────────────────────────────────────────//
 
 function watchTask() {
-	css(); i_scss(); js(); i_js();
+	css(); i_scss(); js_1(); js_2(); i_js();
 
 	watch(dir.src.scsses, css);
 	watch(dir.src.i_scss, i_scss);
 
-	watch(gulpif(isProduction, dir.src.js, [dir.src.js, dir.local.js]), js);
+	watch(gulpif(isProduction, dir.src.main_js, [dir.src.main_js, dir.local.jses]), js_1);
+	watch(dir.src.sec_js, js_2);
 	watch(dir.src.i_js, i_js);
 
 	watch(dir.dest.html).on("change", browserSync.reload);
+	watch("./dist/assets/js/*.js").on("change", browserSync.reload);
 }
 exports.watch = watchTask;
 
@@ -125,5 +136,5 @@ function serve() {
 }
 exports.serve = serve;
 
-exports.build = parallel(css, i_scss, js, i_js);
-exports.default = parallel(css, i_scss, js, i_js);
+exports.build = parallel(css, i_scss, js_1, js_2, i_js);
+exports.default = parallel(css, i_scss, js_1, js_2, i_js);
