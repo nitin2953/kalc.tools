@@ -1,5 +1,5 @@
 ---
-title: Get consistent CSS border widths with this simple trick
+title: Get consistent CSS border widths using outline & box-shadow
 desc: Small border widths of table cells and repeated elements don't look consistant on displays with low DPI, here is a simple trick to get VERY consistent border widths.
 ---
 
