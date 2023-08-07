@@ -17,7 +17,7 @@
 	const sysLang = document.getElementById("system-lang");
 	dateFormat.textContent = new Date("2003-05-29").toLocaleDateString();
 	sysLang.textContent = navigator.language.toUpperCase();
-	dateFormat.onclick = () => { aInput.value = "2003-05-29"; bInput.valueAsDate = new Date(); calcAge() };
+	dateFormat.onclick = () => { aInput.value = "2023-03-09"; bInput.valueAsDate = new Date(); calcAge() };
 
 	bInput.valueAsDate = new Date();
 
